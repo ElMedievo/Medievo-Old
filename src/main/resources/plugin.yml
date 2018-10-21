@@ -2,11 +2,11 @@ name: MedievoCore
 version: ${project.version}
 main: medievo.medievo.main
 authors: [BGM]
-description: Plugin core para El main
+description: Plugin core para El Medievo
 commands:
   tpa:
     usage: /tpa
-    description: Envia tpa a otro jugador
+    description: Envía tpa a otro jugador
   tpaccept:
     usage: /tpaccept
     description: Acepta una solicitud de tpa entrante
@@ -16,3 +16,15 @@ commands:
   coords:
     usage: /coords
     description: Comparte tus coordenadas en el chat
+  broadcast:
+    usage: /broadcast
+    aliases: [br]
+    description: Envía un broadcast al server
+  message:
+    usage: /message
+    description: Envía un mensaje privado
+    aliases: [msg]
+permissions:
+  medievo.broadcast:
+    description: Te permite enviar un broadcast al server
+    default: op

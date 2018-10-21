@@ -1,6 +1,8 @@
 package medievo.medievo;
 
+import medievo.medievo.commands.broadcast;
 import medievo.medievo.commands.coords;
+import medievo.medievo.commands.message;
 import medievo.medievo.commands.tpa.tpa;
 import medievo.medievo.commands.tpa.tpaccept;
 import medievo.medievo.commands.tpa.tpcancel;
@@ -23,6 +25,8 @@ public final class main extends JavaPlugin {
         getCommand("tpaccept").setExecutor(new tpaccept(this));
         getCommand("tpcancel").setExecutor(new tpcancel(this));
         getCommand("coords").setExecutor(new coords(this));
+        getCommand("message").setExecutor(new message(this));
+        getCommand("broadcast").setExecutor(new broadcast(this));
 
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
     }
