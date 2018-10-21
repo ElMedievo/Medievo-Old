@@ -6,6 +6,7 @@ import medievo.medievo.commands.message;
 import medievo.medievo.commands.tpa.tpa;
 import medievo.medievo.commands.tpa.tpaccept;
 import medievo.medievo.commands.tpa.tpcancel;
+import medievo.medievo.events.onPlayerDisconnect;
 import medievo.medievo.events.rankstemp;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -29,6 +30,7 @@ public final class main extends JavaPlugin {
         getCommand("broadcast").setExecutor(new broadcast(this));
 
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
+        Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);
     }
 
     @Override
