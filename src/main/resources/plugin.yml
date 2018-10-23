@@ -24,7 +24,17 @@ commands:
     usage: /message
     description: Envía un mensaje privado
     aliases: [msg]
+  gamemode:
+    usage: /gamemode
+    description: Cambiar gamemode
+    aliases: [gm]
 permissions:
   medievo.broadcast:
     description: Te permite enviar un broadcast al server
+    default: op
+  medievo.gamemode:
+    description: Permite cambiar tu modo de juego
+    default: op
+  medievo.tp:
+    description: Permite teletransportarte
     default: op

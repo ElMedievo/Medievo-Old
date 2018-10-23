@@ -3,6 +3,8 @@ package medievo.medievo;
 import medievo.medievo.commands.broadcast;
 import medievo.medievo.commands.coords;
 import medievo.medievo.commands.message;
+import medievo.medievo.commands.shortcuts.gamemode;
+import medievo.medievo.commands.shortcuts.teleport;
 import medievo.medievo.commands.tpa.tpa;
 import medievo.medievo.commands.tpa.tpaccept;
 import medievo.medievo.commands.tpa.tpcancel;
@@ -28,6 +30,8 @@ public final class main extends JavaPlugin {
         getCommand("coords").setExecutor(new coords(this));
         getCommand("message").setExecutor(new message(this));
         getCommand("broadcast").setExecutor(new broadcast(this));
+        getCommand("gamemode").setExecutor(new gamemode(this));
+        getCommand("teleport").setExecutor(new teleport(this));
 
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
         Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);
