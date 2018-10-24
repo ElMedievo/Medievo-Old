@@ -32,7 +32,7 @@ public class rankstemp implements Listener {
         } else if /*Bernardita, Caprileee, Ferrada, drakos_*/(puuid.equals("b66a092f-1719-4ed7-8cec-0fb5738ec853") || puuid.equals("fc0c0645-c4a6-407f-b2f0-9cef54b59f27") || puuid.equals("5ecbb50f-560f-4a80-aabe-619da29f5e8a") || puuid.equals("4f89273b-7d68-4173-a3f2-9c4b8451da9b")) {
             player.setPlayerListName(ChatColor.DARK_PURPLE + "*" + ChatColor.YELLOW + player.getName() + ChatColor.RESET);
             player.setDisplayName(ChatColor.DARK_PURPLE + "*" + ChatColor.YELLOW + player.getName() + ChatColor.RESET);
-        } else if /* BGMP */((puuid.equals("2cef6d05-ec9a-44b3-bedc-53359c68ae65"))) {
+        } else if (puuid.equals("2cef6d05-ec9a-44b3-bedc-53359c68ae65")) {
             player.setPlayerListName(ChatColor.DARK_PURPLE + "❖" + ChatColor.YELLOW + player.getName() + ChatColor.RESET);
             player.setDisplayName(ChatColor.DARK_PURPLE + "❖" + ChatColor.YELLOW + player.getName() + ChatColor.RESET);
         } else {
