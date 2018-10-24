@@ -35,7 +35,7 @@ public class coords implements CommandExecutor {
                     for (int i = 0; i < args.length; i++) {
                         locinput.append(args[i] + " ");
                     }
-                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + sender.getName() + ":" + "\nX: " + ChatColor.GRAY + locinput + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
+                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + sender.getName() + ":"  + ChatColor.GRAY + locinput + "\nX: " + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
                 }
             } else {
                 sender.sendMessage(noconsole);
