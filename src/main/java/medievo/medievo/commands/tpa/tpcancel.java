@@ -29,7 +29,7 @@ public class tpcancel implements CommandExecutor {
                     Player player = (Player) sender;
                     String reciever = player.getUniqueId().toString();
                     if (tpaqueue.get(reciever) != null) {
-                        String negated = tpaqueue.get(reciever).getPlayer().getName();
+                        String negated = tpaqueue.get(reciever).getPlayer().getDisplayName();
                         Player negatedp = Bukkit.getServer().getPlayer(negated);
                         negatedp.sendMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + player.getName() + ChatColor.RED + " ha rechazado tu solicitud");
                         sender.sendMessage(ChatColor.GOLD + "» " + ChatColor.RED + "La solicitud de " + ChatColor.YELLOW + negated + ChatColor.RED + " fue rechazada!");

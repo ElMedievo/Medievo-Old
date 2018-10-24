@@ -33,8 +33,8 @@ public final class main extends JavaPlugin {
         getCommand("gamemode").setExecutor(new gamemode(this));
         getCommand("teleport").setExecutor(new teleport(this));
 
-        Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
         Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);
+        Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
     }
 
     @Override

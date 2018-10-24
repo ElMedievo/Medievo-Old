@@ -31,8 +31,8 @@ public class tpa implements CommandExecutor {
                         String reciever = player2.getUniqueId().toString();
                         if (tpaqueue.get(reciever) == null) {
                             tpaqueue.put(reciever, issuer);
-                            player1.sendMessage(ChatColor.GOLD + "» " + ChatColor.AQUA + "Petición de teletransporte enviada a " + ChatColor.YELLOW + player2.getName());
-                            player2.sendMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + player1.getName() + ChatColor.AQUA + " Quiere teletransportarse hacia tí\n  " + ChatColor.GREEN + "/tpaccept" + ChatColor.AQUA + " o " + ChatColor.RED + "/tpcancel");
+                            player1.sendMessage(ChatColor.GOLD + "» " + ChatColor.AQUA + "Petición de teletransporte enviada a " + ChatColor.YELLOW + player2.getDisplayName());
+                            player2.sendMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + player1.getDisplayName() + ChatColor.AQUA + " Quiere teletransportarse hacia tí\n  " + ChatColor.GREEN + "/tpaccept" + ChatColor.AQUA + " o " + ChatColor.RED + "/tpcancel");
                             return true;
                         } else {
                             sender.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "El destinatario tiene una solicitud pendiente y debe cancelarla para recibir una nueva.");

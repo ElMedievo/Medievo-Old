@@ -51,16 +51,16 @@ public class gamemode implements CommandExecutor {
                     if (referenced != null) {
                         if (args[0].equals("0")) {
                             referenced.setGameMode(GameMode.SURVIVAL);
-                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getName() + "'s gamemode set to SURVIVAL");
+                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getDisplayName() + "'s gamemode set to SURVIVAL");
                         } else if (args[0].equals("1")) {
                             referenced.setGameMode(GameMode.CREATIVE);
-                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getName() + "'s gamemode set to CREATIVE");
+                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getDisplayName() + "'s gamemode set to CREATIVE");
                         } else if (args[0].equals("2")) {
                             referenced.setGameMode(GameMode.ADVENTURE);
-                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getName() + "'s gamemode set to ADVENTURE");
+                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getDisplayName() + "'s gamemode set to ADVENTURE");
                         } else if (args[0].equals("3")) {
                             referenced.setGameMode(GameMode.SPECTATOR);
-                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getName() + "'s gamemode set to SPECTATOR");
+                            player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + referenced.getDisplayName() + "'s gamemode set to SPECTATOR");
                         } else {
                             player.sendMessage(ChatColor.GOLD + " » " + ChatColor.YELLOW + "⚠ " + ChatColor.RED + args[0] + " is not a valid gamemode");
                             return true;

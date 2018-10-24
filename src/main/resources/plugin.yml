@@ -13,6 +13,10 @@ commands:
   tpcancel:
     usage: /tpcancel
     description: Rechaza una solicitud de tpa entrante
+  teleport:
+    usage: /teleport
+    description: Te teletransporta
+    aliases: [tp]
   coords:
     usage: /coords
     description: Comparte tus coordenadas en el chat
@@ -35,6 +39,6 @@ permissions:
   medievo.gamemode:
     description: Permite cambiar tu modo de juego
     default: op
-  medievo.tp:
+  medievo.teleport:
     description: Permite teletransportarte
     default: op

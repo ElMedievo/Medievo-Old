@@ -29,13 +29,13 @@ public class coords implements CommandExecutor {
                 int y = loc.getBlockY();
                 int z = loc.getBlockZ();
                 if (args.length == 0) {
-                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + sender.getName() + ":" + "\nX: " + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
+                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ((Player) sender).getDisplayName() + ":" + ChatColor.YELLOW + "\nX: " + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
                 } else {
                     StringBuilder locinput = new StringBuilder();
                     for (int i = 0; i < args.length; i++) {
                         locinput.append(args[i] + " ");
                     }
-                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ChatColor.YELLOW + sender.getName() + ": "  + ChatColor.GRAY + locinput + ChatColor.YELLOW + "\nX: " + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
+                    Bukkit.broadcastMessage(ChatColor.GOLD + "» " + ((Player) sender).getDisplayName() + ": " + ChatColor.YELLOW  + ChatColor.GRAY + locinput + ChatColor.YELLOW + "\nX: " + ChatColor.GREEN + x + ChatColor.YELLOW + "\nY: " + ChatColor.GREEN + y + ChatColor.YELLOW + "\nZ: " + ChatColor.GREEN + z);
                 }
             } else {
                 sender.sendMessage(noconsole);
