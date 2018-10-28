@@ -1,7 +1,7 @@
 name: MedievoCore
 version: ${project.version}
 main: medievo.medievo.main
-authors: [BGM]
+authors: [BGMM]
 description: Plugin core para El Medievo
 commands:
   tpa:
