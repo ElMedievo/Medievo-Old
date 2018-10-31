@@ -1,7 +1,7 @@
 name: MedievoCore
 version: ${project.version}
 main: medievo.medievo.main
-authors: [BGMM]
+authors: [BGM]
 description: Plugin core para El Medievo
 commands:
   tpa:
@@ -19,7 +19,7 @@ commands:
     aliases: [tp]
   coords:
     usage: /coords
-    description: Comparte tus coordenadas en el chat
+    description: Comparte tus coordenadas en el teamchat
   broadcast:
     usage: /broadcast
     aliases: [br]
@@ -32,6 +32,14 @@ commands:
     usage: /gamemode
     description: Cambiar gamemode
     aliases: [gm]
+  t:
+    usage: /t
+    description: Permite hablar por el teamchat de tu alianza
+    aliases: [team]
+  g:
+    usage: /g
+    description: Permite hablar por el chat global
+    aliases: [global]
 permissions:
   medievo.broadcast:
     description: Te permite enviar un broadcast al server

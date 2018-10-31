@@ -18,7 +18,6 @@ public class broadcast implements CommandExecutor {
         plugin = instance;
     }
 
-    @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("broadcast") && sender.hasPermission("medievo.broadcast")) {
             if (args.length >= 1) {
