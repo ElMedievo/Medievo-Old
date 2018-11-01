@@ -40,14 +40,14 @@ public class global implements CommandExecutor {
                     }
                     String global = ChatColor.AQUA + "(Global) " + ChatColor.RESET;
                     for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-                        if (plugin.getConfig().getString("Clans.España").contains(players.getName())) {
-                            players.sendMessage(global + "[" + ChatColor.GOLD + "España" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + message);
-                        } else if (plugin.getConfig().getString("Clans.LosBudas").contains(players.getName())) {
-                            players.sendMessage(global + "[" + ChatColor.GRAY + "LosBudas" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
-                        } else if (plugin.getConfig().getString("Clans.Küdaulmapun").contains(players.getName())) {
-                            players.sendMessage(global + "[" + ChatColor.GREEN + "Küdaulmapun" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
+                        if (plugin.getConfig().getString("Clans.España").contains(player.getName())) {
+                            players.sendMessage(global + "[" + ChatColor.GOLD + "España" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + message);
+                        } else if (plugin.getConfig().getString("Clans.LosBudas").contains(player.getName())) {
+                            players.sendMessage(global + "[" + ChatColor.GRAY + "LosBudas" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
+                        } else if (plugin.getConfig().getString("Clans.Küdaulmapun").contains(player.getName())) {
+                            players.sendMessage(global + "[" + ChatColor.GREEN + "Küdaulmapun" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
                         } else {
-                            players.sendMessage(global + "[" + "NoTeam" + "] " + players.getDisplayName() + ": " + ChatColor.RESET + message);
+                            players.sendMessage(global + "[Pacifista] " + player.getDisplayName() + ": " + ChatColor.RESET + message);
                         }
                     }
                 }

@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 import static medievo.medievo.main.clanchatmanager;
 import static medievo.medievo.main.globalchatmanager;
+import static medievo.medievo.main.teams;
 import static medievo.medievo.util.generic.noconsole;
 
 public class teamchat implements CommandExecutor {
@@ -38,16 +39,29 @@ public class teamchat implements CommandExecutor {
                     for (int i = 0; i < args.length; i++) {
                         message.append(args[i] + " ");
                     }
-                    for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-                        if (plugin.getConfig().getString("Clans.España").contains(players.getName())) {
-                            players.sendMessage("[" + ChatColor.GOLD + "España" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + message);
-                        } else if (plugin.getConfig().getString("Clans.LosBudas").contains(players.getName())) {
-                            players.sendMessage("[" + ChatColor.GRAY + "LosBudas" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
-                        } else if (plugin.getConfig().getString("Clans.Küdaulmapun").contains(players.getName())) {
-                            players.sendMessage("[" + ChatColor.GREEN + "Küdaulmapun" + ChatColor.RESET + "] " + ChatColor.RESET + players.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
-                        } else {
-                            players.sendMessage("[" + "NoTeam" + "] " + players.getDisplayName() + ": " + ChatColor.RESET + message);
+                    if (plugin.getConfig().getString("Clans.España").contains(player.getName())) {
+                        for (Player es : Bukkit.getServer().getOnlinePlayers()) {
+                            String checked = es.getName();
+                            if (teams.get("españa").contains(checked)) {
+                                es.sendMessage("[" + ChatColor.GOLD + "España" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + message);
+                            }
                         }
+                    } else if (plugin.getConfig().getString("Clans.LosBudas").contains(player.getName())) {
+                        for (Player mapu : Bukkit.getServer().getOnlinePlayers()) {
+                            String checked = mapu.getName();
+                            if (teams.get("mapuches").contains(checked)) {
+                                mapu.sendMessage("[" + ChatColor.GREEN + "Küdaulmapun" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
+                            }
+                        }
+                    } else if (plugin.getConfig().getString("Clans.Küdaulmapun").contains(player.getName())) {
+                        for (Player budas : Bukkit.getServer().getOnlinePlayers()) {
+                            String checked = budas.getName();
+                            if (teams.get("losbudas").contains(checked)) {
+                                budas.sendMessage("[" + ChatColor.GRAY + "LosBudas" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + ChatColor.RESET + message);
+                            }
+                        }
+                    } else {
+                        Bukkit.broadcastMessage("[Pacifista] " + player.getDisplayName() + ": " + ChatColor.RESET + message);
                     }
                 }
             } else {

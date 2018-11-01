@@ -29,7 +29,6 @@ public class message implements CommandExecutor {
                     message.append(args[i] + " ");
                 }
                 String receiver = args[0];
-                String msender = msgsender.getName();
                 Player receptor = Bukkit.getServer().getPlayer(receiver);
                 World w = msgsender.getWorld();
                 if (!(receptor == null)) {

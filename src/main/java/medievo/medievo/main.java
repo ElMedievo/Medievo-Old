@@ -11,6 +11,7 @@ import medievo.medievo.commands.tpa.tpcancel;
 import medievo.medievo.commands.war.chatdefaults;
 import medievo.medievo.commands.war.global;
 import medievo.medievo.commands.war.teamchat;
+import medievo.medievo.commands.war.teams.teamsListing;
 import medievo.medievo.events.onChat;
 import medievo.medievo.events.onPlayerDisconnect;
 import medievo.medievo.events.rankstemp;
@@ -18,14 +19,18 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
+import static medievo.medievo.commands.war.teams.teamsListing.listTeams;
 
 public final class main extends JavaPlugin {
 
     public static HashMap<String, Player> tpaqueue = new HashMap<String, Player>();
     public static HashMap<String, Boolean> clanchatmanager = new HashMap<String, Boolean>();
     public static HashMap<String, Boolean> globalchatmanager = new HashMap<String, Boolean>();
-
+    public static HashMap<String, List<String>> teams = new HashMap<String, List<String>>();
     static main instance;
 
     @Override
@@ -45,6 +50,7 @@ public final class main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
         Bukkit.getPluginManager().registerEvents(new onChat(this), this);
 
+        listTeams();
         loadConfig();
         chatdefaults.resetChats();
     }

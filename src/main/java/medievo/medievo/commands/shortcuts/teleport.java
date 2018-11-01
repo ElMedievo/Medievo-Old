@@ -30,7 +30,7 @@ public class teleport implements CommandExecutor {
                     if (target != null) {
                         Location targetloc = target.getLocation();
                         player.teleport(targetloc);
-                        sender.sendMessage(ChatColor.YELLOW + "Teleported to " + args[0]);
+                        sender.sendMessage(ChatColor.YELLOW + "Teleported to " + target.getDisplayName());
                     } else {
                         sender.sendMessage(ChatColor.DARK_AQUA + args[0] + ChatColor.RED + " is currently offline");
                     }
@@ -40,8 +40,8 @@ public class teleport implements CommandExecutor {
                     if (teleported != null && target != null) {
                         Location targetloc = target.getLocation();
                         teleported.teleport(targetloc);
-                        sender.sendMessage(ChatColor.YELLOW + "Teleported " + args[0] + " to " + args[1]);
-                        teleported.sendMessage(ChatColor.YELLOW + "You have been teleported to " + args[1]);
+                        sender.sendMessage(ChatColor.YELLOW + "Teleported " + teleported.getDisplayName() + " to " + target.getDisplayName());
+                        teleported.sendMessage(ChatColor.YELLOW + "You have been teleported to " + target.getDisplayName());
                     } else {
                         sender.sendMessage(ChatColor.RED + "One or both players are currently offline");
                     }
