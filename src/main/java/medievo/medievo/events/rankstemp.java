@@ -7,8 +7,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import static medievo.medievo.main.clanchatmanager;
-import static medievo.medievo.main.globalchatmanager;
+import static medievo.medievo.main.globalIsOn;
+import static medievo.medievo.main.teamIsOn;
 
 public class rankstemp implements Listener {
 
@@ -45,9 +45,10 @@ public class rankstemp implements Listener {
             player.setPlayerListName(ChatColor.YELLOW + player.getName() + ChatColor.RESET);
             player.setDisplayName(ChatColor.YELLOW + player.getName() + ChatColor.RESET);
         }
-        globalchatmanager.put(player.getName(), true);
-        clanchatmanager.put(player.getName(), false);
+
+        globalIsOn.put(player.getName(), false);
+        teamIsOn.put(player.getName(), false);
+
         event.setJoinMessage(ChatColor.GREEN + "» " + player.getDisplayName());
-        player.sendMessage("Tu chat default es ahora el Global");
     }
 }

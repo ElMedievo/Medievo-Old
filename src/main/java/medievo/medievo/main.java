@@ -8,29 +8,31 @@ import medievo.medievo.commands.shortcuts.teleport;
 import medievo.medievo.commands.tpa.tpa;
 import medievo.medievo.commands.tpa.tpaccept;
 import medievo.medievo.commands.tpa.tpcancel;
-import medievo.medievo.commands.war.chatdefaults;
-import medievo.medievo.commands.war.global;
-import medievo.medievo.commands.war.teamchat;
-import medievo.medievo.commands.war.teams.teamsListing;
-import medievo.medievo.events.onChat;
+import medievo.medievo.commands.war.chat.global;
+import medievo.medievo.commands.war.chat.onPlayerChat;
+import medievo.medievo.commands.war.chat.team;
 import medievo.medievo.events.onPlayerDisconnect;
 import medievo.medievo.events.rankstemp;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static medievo.medievo.commands.war.teams.teamsListing.listTeams;
+import static medievo.medievo.commands.war.teams.loadTeams;
 
 public final class main extends JavaPlugin {
 
     public static HashMap<String, Player> tpaqueue = new HashMap<String, Player>();
-    public static HashMap<String, Boolean> clanchatmanager = new HashMap<String, Boolean>();
-    public static HashMap<String, Boolean> globalchatmanager = new HashMap<String, Boolean>();
-    public static HashMap<String, List<String>> teams = new HashMap<String, List<String>>();
+    public static HashMap<String, Boolean> globalIsOn = new HashMap<String, Boolean>();
+    public static HashMap<String, Boolean> teamIsOn = new HashMap<String, Boolean>();
+
+    public static HashMap<String, List<String>> es = new HashMap<String, List<String>>();
+    public static HashMap<String, List<String>> bu = new HashMap<String, List<String>>();
+    public static HashMap<String, List<String>> ma = new HashMap<String, List<String>>();
+
     static main instance;
 
     @Override
@@ -43,16 +45,20 @@ public final class main extends JavaPlugin {
         getCommand("broadcast").setExecutor(new broadcast(this));
         getCommand("gamemode").setExecutor(new gamemode(this));
         getCommand("teleport").setExecutor(new teleport(this));
-        getCommand("t").setExecutor(new teamchat(this));
-        getCommand("g").setExecutor(new global(this));
+        getCommand("global").setExecutor(new global(this));
+        getCommand("team").setExecutor(new team(this));
 
         Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
-        Bukkit.getPluginManager().registerEvents(new onChat(this), this);
+        Bukkit.getPluginManager().registerEvents(new onPlayerChat(this), this);
 
-        listTeams();
+        for (Player players : Bukkit.getServer().getOnlinePlayers()) {
+            globalIsOn.put(players.getName(), true);
+            players.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Tu chat default es ahora el Global por reinicio del servidor");
+        }
+
+        loadTeams();
         loadConfig();
-        chatdefaults.resetChats();
     }
 
     @Override
