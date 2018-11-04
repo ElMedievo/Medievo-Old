@@ -34,12 +34,16 @@ commands:
     aliases: [gm]
   global:
     usage: /global
-    description: Hace del Global tu chat por default
+    description: Pone tu chat en global
     aliases: [g]
   team:
     usage: /team
-    description: Hace del chat de tu Clan tu chat por default
+    description: Pone tu chat en el del tu clan
     aliases: [t]
+  reloadconfig:
+    usage: /reloadconfig
+    description: Recarga la configuración
+    aliases: [rlconfig]
 permissions:
   medievo.broadcast:
     description: Te permite enviar un broadcast al server

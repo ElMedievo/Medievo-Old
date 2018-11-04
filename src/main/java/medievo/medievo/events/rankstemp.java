@@ -7,8 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import static medievo.medievo.main.globalIsOn;
-import static medievo.medievo.main.teamIsOn;
+import static medievo.medievo.main.globalon;
 
 public class rankstemp implements Listener {
 
@@ -46,8 +45,9 @@ public class rankstemp implements Listener {
             player.setDisplayName(ChatColor.YELLOW + player.getName() + ChatColor.RESET);
         }
 
-        globalIsOn.put(player.getName(), false);
-        teamIsOn.put(player.getName(), false);
+        if (!(globalon.containsKey(player.getName()))) {
+            globalon.put(player.getName(), true);
+        }
 
         event.setJoinMessage(ChatColor.GREEN + "» " + player.getDisplayName());
     }

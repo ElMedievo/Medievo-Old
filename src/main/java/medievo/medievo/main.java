@@ -8,30 +8,23 @@ import medievo.medievo.commands.shortcuts.teleport;
 import medievo.medievo.commands.tpa.tpa;
 import medievo.medievo.commands.tpa.tpaccept;
 import medievo.medievo.commands.tpa.tpcancel;
-import medievo.medievo.commands.war.chat.global;
-import medievo.medievo.commands.war.chat.onPlayerChat;
-import medievo.medievo.commands.war.chat.team;
 import medievo.medievo.events.onPlayerDisconnect;
 import medievo.medievo.events.rankstemp;
+import medievo.medievo.war.Commands.global;
+import medievo.medievo.war.Commands.reloadTeams;
+import medievo.medievo.war.Commands.team;
+import medievo.medievo.war.chat;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
-import java.util.List;
-
-import static medievo.medievo.commands.war.teams.loadTeams;
 
 public final class main extends JavaPlugin {
 
     public static HashMap<String, Player> tpaqueue = new HashMap<String, Player>();
-    public static HashMap<String, Boolean> globalIsOn = new HashMap<String, Boolean>();
-    public static HashMap<String, Boolean> teamIsOn = new HashMap<String, Boolean>();
-
-    public static HashMap<String, List<String>> es = new HashMap<String, List<String>>();
-    public static HashMap<String, List<String>> bu = new HashMap<String, List<String>>();
-    public static HashMap<String, List<String>> ma = new HashMap<String, List<String>>();
+    public static HashMap<String, Boolean> globalon = new HashMap<String, Boolean>();
 
     static main instance;
 
@@ -47,17 +40,17 @@ public final class main extends JavaPlugin {
         getCommand("teleport").setExecutor(new teleport(this));
         getCommand("global").setExecutor(new global(this));
         getCommand("team").setExecutor(new team(this));
+        getCommand("reloadconfig").setExecutor(new reloadTeams(this));
 
+        Bukkit.getPluginManager().registerEvents(new chat(this), this);
         Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);
         Bukkit.getPluginManager().registerEvents(new rankstemp(this), this);
-        Bukkit.getPluginManager().registerEvents(new onPlayerChat(this), this);
 
         for (Player players : Bukkit.getServer().getOnlinePlayers()) {
-            globalIsOn.put(players.getName(), true);
-            players.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Tu chat default es ahora el Global por reinicio del servidor");
+            globalon.put(players.getName(), true);
+            players.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Chat default cambiado a Global!");
         }
 
-        loadTeams();
         loadConfig();
     }
 

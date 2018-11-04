@@ -1,21 +1,27 @@
 Clans:
-  España:
-    - BGMM
-    - Ferrada
-    - Esservil
-    - Chxky
-    - ElJarjas
-    - drakos_
-    - Fabroto
-  Küdaulmapun:
-    - Barrenas
-    - 1an25
-    - GuatonBairon
-  LosBudas:
-    - Caprileee
-    - Zandsek
-    - OneSip
-    - chepito_
-    - elwatonbb
-    - NaShotZ
-  LosBurgos:
+    españa:
+        - BGMM
+        - Ferrada
+        - drakos_
+        - 12x2
+        - MaxBop
+        - AbdulAkbar
+        - Esservil
+        - Fabroto
+    budas:
+        - Caprileee
+        - OneSip
+        - Zandsek
+        - NaShotZ
+        - chepito_
+    losburgos:
+        - ElJarjas
+        - Chxky
+    italia:
+        - LAPianoM
+        - Sensualon
+        - DiosGeneroso
+    mapuches:
+        - 1an15
+        - GuatonBairon
+        - Barrenas
