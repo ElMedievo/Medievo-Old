@@ -3,6 +3,9 @@ package medievo.medievo;
 import medievo.medievo.commands.broadcast;
 import medievo.medievo.commands.coords;
 import medievo.medievo.commands.message.message;
+import medievo.medievo.commands.punishments.ban;
+import medievo.medievo.commands.punishments.kick;
+import medievo.medievo.commands.punishments.pardon;
 import medievo.medievo.commands.shortcuts.gamemode;
 import medievo.medievo.commands.shortcuts.teleport;
 import medievo.medievo.commands.tpa.tpa;
@@ -41,6 +44,10 @@ public final class main extends JavaPlugin {
         getCommand("global").setExecutor(new global(this));
         getCommand("team").setExecutor(new team(this));
         getCommand("reloadconfig").setExecutor(new reloadTeams(this));
+        getCommand("pb").setExecutor(new ban(this));
+        getCommand("kick").setExecutor(new kick(this));
+        getCommand("pardon").setExecutor(new pardon(this));
+
 
         Bukkit.getPluginManager().registerEvents(new chat(this), this);
         Bukkit.getPluginManager().registerEvents(new onPlayerDisconnect(this), this);

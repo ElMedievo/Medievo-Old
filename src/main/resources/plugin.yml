@@ -40,6 +40,16 @@ commands:
     usage: /team
     description: Pone tu chat en el del tu clan
     aliases: [t]
+  pb:
+    usage: /pb
+    description: Banea a un jugador
+    aliases: [ban]
+  kick:
+    usage: /kick
+    description: Kickea a un jugador
+  pardon:
+    usage: /pardon
+    description: Levanta una infracción
   reloadconfig:
     usage: /reloadconfig
     description: Recarga la configuración
@@ -53,4 +63,13 @@ permissions:
     default: op
   medievo.teleport:
     description: Permite teletransportarte
+    default: op
+  medievo.ban:
+    description: Te permite banear a un jugador
+    default: op
+  medievo.kick:
+    description: Te permite kickear a un jugador
+    default: op
+  medievo.pardon:
+    description: Te permite desbanear a un jugador
     default: op
