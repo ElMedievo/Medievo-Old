@@ -1,75 +1,31 @@
-name: MedievoCore
+name: Medievo
 version: ${project.version}
-main: medievo.medievo.main
-authors: [BGM]
-description: Plugin core para El Medievo
+main: com.bgmp.medievo.main
+authors: [BGMM]
+description: Medieval plugin
 commands:
-  tpa:
-    usage: /tpa
-    description: Envía tpa a otro jugador
-  tpaccept:
-    usage: /tpaccept
-    description: Acepta una solicitud de tpa entrante
-  tpcancel:
-    usage: /tpcancel
-    description: Rechaza una solicitud de tpa entrante
-  teleport:
-    usage: /teleport
-    description: Te teletransporta
-    aliases: [tp]
-  coords:
-    usage: /coords
-    description: Comparte tus coordenadas en el teamchat
-  broadcast:
-    usage: /broadcast
-    aliases: [br]
-    description: Envía un broadcast al server
-  message:
-    usage: /message
-    description: Envía un mensaje privado
-    aliases: [msg]
-  gamemode:
-    usage: /gamemode
-    description: Cambiar gamemode
-    aliases: [gm]
-  global:
-    usage: /global
-    description: Pone tu chat en global
-    aliases: [g]
-  team:
-    usage: /team
-    description: Pone tu chat en el del tu clan
-    aliases: [t]
-  pb:
-    usage: /pb
-    description: Banea a un jugador
-    aliases: [ban]
-  kick:
-    usage: /kick
-    description: Kickea a un jugador
-  pardon:
-    usage: /pardon
-    description: Levanta una infracción
-  reloadconfig:
-    usage: /reloadconfig
-    description: Recarga la configuración
-    aliases: [rlconfig]
-permissions:
-  medievo.broadcast:
-    description: Te permite enviar un broadcast al server
-    default: op
-  medievo.gamemode:
-    description: Permite cambiar tu modo de juego
-    default: op
-  medievo.teleport:
-    description: Permite teletransportarte
-    default: op
-  medievo.ban:
-    description: Te permite banear a un jugador
-    default: op
-  medievo.kick:
-    description: Te permite kickear a un jugador
-    default: op
-  medievo.pardon:
-    description: Te permite desbanear a un jugador
-    default: op
+  randomtp:
+    usage: /randomtp
+    aliases: [rtp]
+    description: Random teleport command
+  create:
+    usage: /create
+    description: Creates a clan
+  leave:
+    usage: /leave
+    description: Leaves you current clan
+  invite:
+    usage: /invite
+    description: Invites someone to your actual clan
+  accept:
+    usage: /accept
+    description: Accepts a clan invitiation
+  cancel:
+    usage: /cancel
+    description: Cancels a clan invitation
+  confirm:
+    usage: /confirm
+    description: Confirms an action
+  deny:
+    usage: /deny
+    description: Denies can action
