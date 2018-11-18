@@ -3,6 +3,7 @@ package com.bgmp.medievo;
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
 import com.bgmp.medievo.commands.broadcast;
+import com.bgmp.medievo.commands.mod;
 import com.bgmp.medievo.commands.randomtp.randomtp;
 import com.bgmp.medievo.events.playerJoin;
 import com.bgmp.medievo.commands.gamemode;
@@ -31,6 +32,7 @@ public final class main extends JavaPlugin {
         getCommand("reloadconfig").setExecutor(new reloadConfig(this));
         getCommand("gamemode").setExecutor(new gamemode(this));
         getCommand("broadcast").setExecutor(new broadcast(this));
+        getCommand("mod").setExecutor(new mod(this));
 
         Bukkit.getPluginManager().registerEvents(new chat(this), this);
         Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);

@@ -48,3 +48,6 @@ commands:
     medievo.gamemode:
       description: Allows you to change your gamemode
       default: op
+    medievo.mod:
+      descritpion: Allows you to get into mod mode
+      default: op
