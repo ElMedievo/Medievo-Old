@@ -37,3 +37,7 @@ commands:
     usage: /gamemode
     description: Changes your gamemode
     aliases: [gm]
+  broadcast:
+    usage: /broadcast
+    description: Broadcast to the server
+    aliases: [br]
