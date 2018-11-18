@@ -73,4 +73,3 @@ commands:
     medievo.pardon:
       description: Allows you to pardon a player
       default: op
-
