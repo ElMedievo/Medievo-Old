@@ -4,7 +4,7 @@ import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
 import com.bgmp.medievo.commands.randomtp.randomtp;
 import com.bgmp.medievo.events.playerJoin;
-import com.bgmp.medievo.util.gamemode;
+import com.bgmp.medievo.commands.gamemode;
 import com.bgmp.medievo.util.reloadConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
