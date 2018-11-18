@@ -25,6 +25,9 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         loadConfig();
         loadqueues();
+        Bukkit.getPluginManager().registerEvents(new chat(this), this);
+        Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
+
         getCommand("randomtp").setExecutor(new randomtp(this));
         getCommand("create").setExecutor(new create(this));
         getCommand("leave").setExecutor(new leave(this));
@@ -42,8 +45,7 @@ public final class main extends JavaPlugin {
         getCommand("pardon").setExecutor(new pardon(this));
         getCommand("report").setExecutor(new reports(this));
 
-        Bukkit.getPluginManager().registerEvents(new chat(this), this);
-        Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
+
     }
 
     @Override

@@ -35,10 +35,10 @@ public class reports implements CommandExecutor {
                         if (cmd.getName().equalsIgnoreCase("report")) {
                             if (reported != null) {
                                 for (Player on : Bukkit.getServer().getOnlinePlayers()) {
-                                    if (on.hasPermission("event.reports")) {
+                                    if (on.hasPermission("medievo.reports")) {
                                         String reportMessage = ("[Rep] " + player.getName() + " ➔ " + reported.getName() + ": " + msg);
                                         World w = on.getWorld();
-                                        on.sendMessage("[" + ChatColor.GOLD + "Rep" + ChatColor.RESET + "] " + player.getDisplayName() + " ➔ " + reported.getDisplayName() + ": " + msg);
+                                        on.sendMessage("[" + ChatColor.GOLD + "Rep" + ChatColor.RESET + "] " + player.getDisplayName() + ChatColor.RESET + " ➔ " + reported.getDisplayName() + ": " + msg);
                                         w.playSound(on.getLocation(), Sound.BLOCK_ANVIL_LAND, 10, 1);
                                     }
                                 }

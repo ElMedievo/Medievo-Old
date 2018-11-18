@@ -41,6 +41,9 @@ commands:
     usage: /broadcast
     description: Broadcast to the server
     aliases: [br]
+  mod:
+    usage: /mod
+    description: Turns your mode into moderator mode
   ban:
     usage: /ban
     description: Bans a player
@@ -72,4 +75,7 @@ commands:
       default: op
     medievo.pardon:
       description: Allows you to pardon a player
+      default: op
+    medievo.reports:
+      description: Allows you to see the server reports
       default: op
