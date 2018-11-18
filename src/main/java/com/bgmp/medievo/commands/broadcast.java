@@ -31,8 +31,14 @@ public class broadcast implements CommandExecutor {
 
                 if (args.length == 0) {
                     player.sendMessage(syntaxerror);
-                } else if (args.length == 1) {
-                    Bukkit.broadcastMessage(ChatColor.RED + "" + "[BROADCAST]" + args[0]);
+                } else if (args.length > 0) {
+
+                    String brstr = "";
+                    for (int i = 0; i < args.length; i++) {
+                        brstr += " " + args[i];
+                    }
+
+                    Bukkit.broadcastMessage(ChatColor.RED + "[BROADCAST]" + brstr);
                 } else {
                     player.sendMessage(syntaxerror);
                 }
