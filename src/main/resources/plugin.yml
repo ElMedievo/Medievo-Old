@@ -33,3 +33,7 @@ commands:
     usage: /reloadconfig
     aliases: [rlconfig]
     description: Reloads the server config
+  gamemode:
+    usage: /gamemode
+    description: Changes your gamemode
+    aliases: [gm]

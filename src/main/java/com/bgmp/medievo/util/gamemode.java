@@ -1,6 +1,6 @@
-package medievo.medievo.commands.shortcuts;
+package com.bgmp.medievo.util;
 
-import medievo.medievo.main;
+import com.bgmp.medievo.main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -9,8 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static medievo.medievo.util.generic.noconsole;
-import static medievo.medievo.util.generic.noperms;
+import static com.bgmp.medievo.util.genericmessages.noconsole;
+import static com.bgmp.medievo.util.genericmessages.noperms;
 
 public class gamemode implements CommandExecutor {
 
