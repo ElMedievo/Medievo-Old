@@ -41,6 +41,19 @@ commands:
     usage: /broadcast
     description: Broadcast to the server
     aliases: [br]
+  ban:
+    usage: /ban
+    description: Bans a player
+    aliases: [pb]
+  kick:
+    usage: /kick
+    description: Kicks a player
+  pardon:
+    usage: /pardon
+    description: Pardons a player
+  report:
+    usage: /report
+    description: Reports a player
   permissions:
     medievo.broadcast:
       description: Allows you to send a broadcast message
@@ -51,3 +64,13 @@ commands:
     medievo.mod:
       descritpion: Allows you to get into mod mode
       default: op
+    medievo.ban:
+      description: Allows you to ban a player
+      default: op
+    medievo.kick:
+      description: Allows you to kick player
+      default: op
+    medievo.pardon:
+      description: Allows you to pardon a player
+      default: op
+
