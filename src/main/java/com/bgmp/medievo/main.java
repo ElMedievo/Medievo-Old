@@ -13,7 +13,7 @@ import static com.bgmp.medievo.util.queues.loadqueues;
 public final class main extends JavaPlugin {
 
     static main instance;
-
+    //TEST
     @Override
     public void onEnable() {
         loadConfig();
