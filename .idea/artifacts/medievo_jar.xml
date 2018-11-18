@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="medievo:jar">
-    <output-path>$PROJECT_DIR$/classes/artifacts/medievo_jar</output-path>
-    <root id="archive" name="medievo.jar">
-      <element id="module-output" name="medievo" />
-    </root>
-  </artifact>
-</component>
