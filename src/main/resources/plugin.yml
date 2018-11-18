@@ -29,3 +29,7 @@ commands:
   deny:
     usage: /deny
     description: Denies can action
+  reloadconfig:
+    usage: /reloadconfig
+    aliases: [rlconfig]
+    description: Reloads the server config

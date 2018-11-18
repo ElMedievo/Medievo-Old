@@ -23,7 +23,7 @@ public class chat implements Listener {
         String uuid = player.getUniqueId().toString();
         String msg = event.getMessage();
 
-        if (plugin.getConfig().getString("Players." +  uuid + ".clan").equals("neutral")) {
+        if (plugin.getConfig().getString("Players." + uuid + ".clan").equals("neutral")) {
             Bukkit.broadcastMessage("[" + ChatColor.GRAY + "Neutral" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
         } else {
             String clan = plugin.getConfig().getString("Players." + uuid + ".clan");

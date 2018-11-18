@@ -2,9 +2,9 @@ package com.bgmp.medievo;
 
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
-import com.bgmp.medievo.clans.events.join;
 import com.bgmp.medievo.commands.randomtp.randomtp;
-import com.bgmp.medievo.commands.randomtp.rtpstatus;
+import com.bgmp.medievo.events.playerJoin;
+import com.bgmp.medievo.util.reloadConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,10 +26,10 @@ public final class main extends JavaPlugin {
         getCommand("invite").setExecutor(new invite(this));
         getCommand("accept").setExecutor(new accept(this));
         getCommand("cancel").setExecutor(new cancel(this));
+        getCommand("reloadconfig").setExecutor(new reloadConfig(this));
 
-        Bukkit.getPluginManager().registerEvents(new rtpstatus(this), this);
         Bukkit.getPluginManager().registerEvents(new chat(this), this);
-        Bukkit.getPluginManager().registerEvents(new join(this), this);
+        Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
     }
 
     @Override
