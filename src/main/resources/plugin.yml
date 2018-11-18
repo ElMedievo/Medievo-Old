@@ -41,3 +41,10 @@ commands:
     usage: /broadcast
     description: Broadcast to the server
     aliases: [br]
+  permissions:
+    medievo.broadcast:
+      description: Allows you to send a broadcast message
+      default: op
+    medievo.gamemode:
+      description: Allows you to change your gamemode
+      default: op

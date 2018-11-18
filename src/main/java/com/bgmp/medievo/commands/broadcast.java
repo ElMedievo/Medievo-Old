@@ -26,30 +26,24 @@ public class broadcast implements CommandExecutor {
 
         if (cmd.getName().equalsIgnoreCase("broadcast") && sender.hasPermission("medievo.broadcast")) {
             if(sender instanceof Player){
-
                 Player player = (Player) sender;
-
                 if (args.length == 0) {
                     player.sendMessage(syntaxerror);
                 } else if (args.length > 0) {
-
                     String brstr = "";
                     for (int i = 0; i < args.length; i++) {
                         brstr += " " + args[i];
                     }
-
-                    Bukkit.broadcastMessage(ChatColor.RED + "[BROADCAST]" + brstr);
+                    Bukkit.broadcastMessage(ChatColor.RED + "[Broadcast]" + brstr);
                 } else {
                     player.sendMessage(syntaxerror);
                 }
-
-
-            } else { sender.sendMessage(noconsole); }
-        } else { sender.sendMessage(noperms); }
+            } else {
+                sender.sendMessage(noconsole);
+            }
+        } else {
+            sender.sendMessage(noperms);
+        }
         return true;
     }
-
-
-
-
 }
