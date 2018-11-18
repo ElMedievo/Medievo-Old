@@ -37,8 +37,8 @@ public class randomtp implements CommandExecutor {
                     World w = player.getWorld();
                     Random random = new Random();
                     while (true) {
-                        int randomX = random.nextInt(4500 - -4500 + 1) - 4500;
-                        int randomZ = random.nextInt(4500 - -4500 + 1) - 4500;
+                        int randomX = random.nextInt(2250 - -2250 + 1) - 2250;
+                        int randomZ = random.nextInt(2250 - -2250 + 1) - 2250;
                         int randomY = random.nextInt(80 - 60 + 1) + 60;
                         Location randomLoc = new Location(player.getWorld(), randomX, randomY + 1, randomZ);
                         Block reference = randomLoc.getBlock();
