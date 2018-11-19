@@ -61,6 +61,10 @@ commands:
     usage: /message
     description: Private Message a player.
     aliases: [msg, pm, tell]
+  adminchat:
+    usage: /adminchat
+    description: Private chat for admins
+    aliases: [a, ac]
   permissions:
     medievo.broadcast:
       description: Allows you to send a broadcast message
@@ -82,4 +86,7 @@ commands:
       default: op
     medievo.reports:
       description: Allows you to see the server reports
+      default: op
+    medievo.adminchat:
+      description: ALlows you to see adminchat
       default: op
