@@ -28,6 +28,7 @@ public class cancel implements CommandExecutor {
                 if (invitequeue.containsKey(uuid)) {
                     String clan = invitequeue.get(uuid);
                     player.sendMessage(ChatColor.RED + "You have cancelled the clan invitation for " + ChatColor.AQUA + clan);
+                    invitequeue.remove(uuid);
                 } else {
                     player.sendMessage(ChatColor.RED + "You have not been invited to join any clan");
                 }

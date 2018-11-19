@@ -30,6 +30,7 @@ public class accept implements CommandExecutor {
                     plugin.getConfig().set("Players." + uuid + ".clan", clan);
                     player.sendMessage(ChatColor.GREEN + "You are now a member of " + ChatColor.AQUA + clan + ChatColor.GREEN + "!");
                     plugin.saveConfig();
+                    invitequeue.remove(uuid);
                 } else {
                     player.sendMessage(ChatColor.RED + "You have not been invited to join any clan");
                 }
