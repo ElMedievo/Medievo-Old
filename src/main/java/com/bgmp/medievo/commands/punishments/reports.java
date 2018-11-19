@@ -38,7 +38,8 @@ public class reports implements CommandExecutor {
                                     if (on.hasPermission("medievo.reports")) {
                                         String reportMessage = ("[Rep] " + player.getName() + " ➔ " + reported.getName() + ": " + msg);
                                         World w = on.getWorld();
-                                        on.sendMessage("[" + ChatColor.GOLD + "Rep" + ChatColor.RESET + "] " + player.getDisplayName() + ChatColor.RESET + " ➔ " + reported.getDisplayName() + ": " + msg);
+                                        on.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.GOLD + "Rep" + ChatColor.RESET + "" + ChatColor.GRAY
+                                                + "] " + player.getDisplayName() + ChatColor.RESET + " ➔ " + reported.getDisplayName() + ChatColor.GRAY + ": " + ChatColor.RESET + msg);
                                         w.playSound(on.getLocation(), Sound.BLOCK_ANVIL_LAND, 10, 1);
                                     }
                                 }
