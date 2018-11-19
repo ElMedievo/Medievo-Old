@@ -33,7 +33,7 @@ public class tphome implements CommandExecutor {
                             player.sendMessage(ChatColor.RED + "You haven't set your home yet!");
                         }
                     } else {
-                        player.sendMessage(ChatColor.RED + "Command Syntax: /sethome");
+                        player.sendMessage(ChatColor.RED + "Command Syntax: /tphome");
                     }
                 } else {
                     sender.sendMessage(noperms);
