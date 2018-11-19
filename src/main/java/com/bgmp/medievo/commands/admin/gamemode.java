@@ -1,4 +1,4 @@
-package com.bgmp.medievo.commands;
+package com.bgmp.medievo.commands.admin;
 
 import com.bgmp.medievo.main;
 import org.bukkit.Bukkit;

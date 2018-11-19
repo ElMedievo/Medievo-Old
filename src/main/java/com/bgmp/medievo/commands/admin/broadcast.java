@@ -1,4 +1,4 @@
-package com.bgmp.medievo.commands;
+package com.bgmp.medievo.commands.admin;
 
 import com.bgmp.medievo.main;
 import org.bukkit.Bukkit;
@@ -29,14 +29,12 @@ public class broadcast implements CommandExecutor {
                 Player player = (Player) sender;
                 if (args.length == 0) {
                     player.sendMessage(syntaxerror);
-                } else if (args.length > 0) {
+                } else {
                     String brstr = "";
                     for (int i = 0; i < args.length; i++) {
                         brstr += " " + args[i];
                     }
                     Bukkit.broadcastMessage(ChatColor.RED + "[Broadcast]" + brstr);
-                } else {
-                    player.sendMessage(syntaxerror);
                 }
             } else {
                 sender.sendMessage(noconsole);
