@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static com.bgmp.medievo.util.genericmessages.noconsole;
+import static com.bgmp.medievo.util.queues.replyqueue;
 
 public class message implements CommandExecutor {
 
@@ -28,19 +29,28 @@ public class message implements CommandExecutor {
 
                     Player msgreceiver = Bukkit.getServer().getPlayer(args[0]);
 
-                    StringBuilder builder = new StringBuilder();
-                    for (int i = 1; i < args.length; i++) {
-                        builder.append(args[i] + " ");
+                    if(msgreceiver.isOnline()) { // if msgreceiver is online
+
+                        StringBuilder builder = new StringBuilder();
+                        for (int i = 1; i < args.length; i++) {
+                            builder.append(args[i] + " ");
+                        }
+
+                        String message = builder.toString();
+
+                        msgreceiver.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
+                                + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
+                                msgsender.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+
+                        msgsender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
+                                msgreceiver.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+
+                        // Map msgreceiver to msgsender in the reply queue, so that receiver may send a message to msgsender in the future
+                            replyqueue.put(msgreceiver, msgsender); // Map msgreceiver to its msgsender
+                    } else {
+                        msgsender.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to send a message to!");
                     }
-                    String message = builder.toString();
 
-                            msgreceiver.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
-                                    + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
-                                    msgsender.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
-
-                            msgsender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
-                                    + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
-                                    msgreceiver.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
                 } else {
                     msgsender.sendMessage(ChatColor.RED + "Command Syntax: /message {player} {message}");
                 }

@@ -59,8 +59,12 @@ commands:
     description: Reports a player
   message:
     usage: /message
-    description: Private Message a player.
+    description: Private Message a player
     aliases: [msg, pm, tell]
+  reply:
+    usage: /reply
+    description: Reply to a player
+    aliases: [r]
   adminchat:
     usage: /adminchat
     description: Private chat for admins
