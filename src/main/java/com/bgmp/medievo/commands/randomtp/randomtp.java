@@ -53,6 +53,7 @@ public class randomtp implements CommandExecutor {
                             Inventory playerinv = player.getInventory();
                             ItemStack boat = new ItemStack(Material.OAK_BOAT);
                             ItemStack food = new ItemStack(Material.COOKED_BEEF, 16);
+                            ItemStack wand = new ItemStack(Material.GOLDEN_SHOVEL);
                             playerinv.addItem(boat);
                             playerinv.addItem(food);
                             break;

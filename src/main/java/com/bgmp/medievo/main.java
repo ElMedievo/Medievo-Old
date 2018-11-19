@@ -11,6 +11,8 @@ import com.bgmp.medievo.commands.punishments.reports;
 import com.bgmp.medievo.commands.randomtp.randomtp;
 import com.bgmp.medievo.events.playerJoin;
 import com.bgmp.medievo.commands.gamemode;
+import com.bgmp.medievo.events.playerKill;
+import com.bgmp.medievo.events.playerRespawn;
 import com.bgmp.medievo.util.reloadConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,8 +27,6 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         loadConfig();
         loadqueues();
-        Bukkit.getPluginManager().registerEvents(new chat(this), this);
-        Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
 
         getCommand("randomtp").setExecutor(new randomtp(this));
         getCommand("create").setExecutor(new create(this));
@@ -45,7 +45,10 @@ public final class main extends JavaPlugin {
         getCommand("pardon").setExecutor(new pardon(this));
         getCommand("report").setExecutor(new reports(this));
 
-
+        Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);
+        Bukkit.getPluginManager().registerEvents(new chat(this), this);
+        Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
+        Bukkit.getPluginManager().registerEvents(new playerKill(this), this);
     }
 
     @Override
