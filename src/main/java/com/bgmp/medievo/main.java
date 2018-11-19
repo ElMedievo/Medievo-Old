@@ -2,18 +2,20 @@ package com.bgmp.medievo;
 
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
-import com.bgmp.medievo.commands.broadcast;
+import com.bgmp.medievo.commands.admin.broadcast;
 import com.bgmp.medievo.commands.chat.adminchat;
 import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.chat.reply;
-import com.bgmp.medievo.commands.mod;
+import com.bgmp.medievo.commands.admin.mod;
+import com.bgmp.medievo.commands.home.tphome;
 import com.bgmp.medievo.commands.punishments.ban;
 import com.bgmp.medievo.commands.punishments.kick;
 import com.bgmp.medievo.commands.punishments.pardon;
 import com.bgmp.medievo.commands.punishments.reports;
 import com.bgmp.medievo.commands.randomtp.randomtp;
+import com.bgmp.medievo.commands.home.sethome;
 import com.bgmp.medievo.events.playerJoin;
-import com.bgmp.medievo.commands.gamemode;
+import com.bgmp.medievo.commands.admin.gamemode;
 import com.bgmp.medievo.events.playerKill;
 import com.bgmp.medievo.events.playerLeave;
 import com.bgmp.medievo.events.playerRespawn;
@@ -51,6 +53,8 @@ public final class main extends JavaPlugin {
         getCommand("message").setExecutor(new message(this));
         getCommand("adminchat").setExecutor(new adminchat(this));
         getCommand("reply").setExecutor(new reply(this));
+        getCommand("sethome").setExecutor(new sethome(this));
+        getCommand("tphome").setExecutor((new tphome(this)));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);

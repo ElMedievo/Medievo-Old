@@ -72,6 +72,10 @@ commands:
   sethome:
     usage: /sethome
     description: Set current location to be your respawn location.
+  tphome:
+    usage: /tphome
+    description: Teleport to your home
+    aliases: [tph]
   me:
     usage: /me
     description: custom message
@@ -104,5 +108,8 @@ commands:
       description: Allows you to see adminchat
       default: op
     medievo.sethome:
-      description: Allows you to place your home.
+      description: Allows you to place your home
+      default: op
+    medievo.tphome:
+      description: Allows you to tp to your home
       default: op
