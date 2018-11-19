@@ -18,6 +18,6 @@ public class playerLeave implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.setQuitMessage(ChatColor.RED + "« " + player.getDisplayName());
+        event.setQuitMessage(ChatColor.RED + "« " + ChatColor.RESET + player.getDisplayName() + ChatColor.GOLD + " left.");
     }
 }
