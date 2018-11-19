@@ -3,6 +3,7 @@ package com.bgmp.medievo;
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
 import com.bgmp.medievo.commands.broadcast;
+import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.mod;
 import com.bgmp.medievo.commands.punishments.ban;
 import com.bgmp.medievo.commands.punishments.kick;
@@ -45,6 +46,7 @@ public final class main extends JavaPlugin {
         getCommand("kick").setExecutor(new kick(this));
         getCommand("pardon").setExecutor(new pardon(this));
         getCommand("report").setExecutor(new reports(this));
+        getCommand("message").setExecutor(new message(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);

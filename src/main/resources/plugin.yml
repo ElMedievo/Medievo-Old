@@ -57,6 +57,10 @@ commands:
   report:
     usage: /report
     description: Reports a player
+  message:
+    usage: /message
+    description: Private Message a player.
+    aliases: [msg, pm, tell]
   permissions:
     medievo.broadcast:
       description: Allows you to send a broadcast message
