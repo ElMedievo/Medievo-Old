@@ -66,6 +66,9 @@ commands:
     description: Private chat for admins
     aliases: [a, ac]
   permissions:
+    medievo.reload:
+      description: Allows you to reloadconfig the Medievo plugin
+      default: op
     medievo.broadcast:
       description: Allows you to send a broadcast message
       default: op
