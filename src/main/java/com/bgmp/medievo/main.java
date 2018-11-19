@@ -21,7 +21,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import static com.bgmp.medievo.util.queues.loadqueues;
 
 public final class main extends JavaPlugin {
-
+//TESTING
     static main instance;
 
     @Override
