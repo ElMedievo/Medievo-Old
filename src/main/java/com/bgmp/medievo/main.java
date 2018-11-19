@@ -3,6 +3,7 @@ package com.bgmp.medievo;
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
 import com.bgmp.medievo.commands.admin.broadcast;
+import com.bgmp.medievo.commands.admin.heal;
 import com.bgmp.medievo.commands.chat.adminchat;
 import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.chat.reply;
@@ -55,6 +56,7 @@ public final class main extends JavaPlugin {
         getCommand("reply").setExecutor(new reply(this));
         getCommand("sethome").setExecutor(new sethome(this));
         getCommand("tphome").setExecutor((new tphome(this)));
+        getCommand("heal").setExecutor(new heal(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);

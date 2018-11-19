@@ -76,9 +76,9 @@ commands:
     usage: /tphome
     description: Teleport to your home
     aliases: [tph]
-  me:
-    usage: /me
-    description: custom message
+  heal:
+    usage: /heal [player]
+    description: Heals the player
   permissions:
     medievo.reload:
       description: Allows you to reloadconfig the Medievo plugin
@@ -112,4 +112,7 @@ commands:
       default: op
     medievo.tphome:
       description: Allows you to tp to your home
+      default: op
+    medievo.heal:
+      description: Allows you to heal a player
       default: op
