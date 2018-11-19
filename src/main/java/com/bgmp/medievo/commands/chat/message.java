@@ -27,30 +27,29 @@ public class message implements CommandExecutor {
 
                 if (args.length > 1) {
 
-                    Player msgreceiver = Bukkit.getServer().getPlayer(args[0]);
+                    for (Player receiver : Bukkit.getServer().getOnlinePlayers()) {
+                        if (receiver.getName().equalsIgnoreCase(args[0])) { // if msgreceiver is online
 
-                    if(msgreceiver.isOnline()) { // if msgreceiver is online
+                            StringBuilder builder = new StringBuilder();
+                            for (int i = 1; i < args.length; i++) {
+                                builder.append(args[i] + " ");
+                            }
 
-                        StringBuilder builder = new StringBuilder();
-                        for (int i = 1; i < args.length; i++) {
-                            builder.append(args[i] + " ");
+                            String message = builder.toString();
+
+                            receiver.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
+                                    + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
+                                    msgsender.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+
+                            msgsender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
+                                    receiver.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+
+                            // Map receiver to msgsender in the reply queue, so that receiver may send a message to msgsender in the future
+                            replyqueue.put(receiver, msgsender); // Map receiver to its msgsender
+                        } else {
+                            msgsender.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to send a message to!");
                         }
-
-                        String message = builder.toString();
-
-                        msgreceiver.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
-                                + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
-                                msgsender.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
-
-                        msgsender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
-                                msgreceiver.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
-
-                        // Map msgreceiver to msgsender in the reply queue, so that receiver may send a message to msgsender in the future
-                            replyqueue.put(msgreceiver, msgsender); // Map msgreceiver to its msgsender
-                    } else {
-                        msgsender.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to send a message to!");
                     }
-
                 } else {
                     msgsender.sendMessage(ChatColor.RED + "Command Syntax: /message {player} {message}");
                 }
@@ -58,7 +57,6 @@ public class message implements CommandExecutor {
         } else {
             Bukkit.getConsoleSender().sendMessage(noconsole);
         }
-
         return true;
     }
 }
