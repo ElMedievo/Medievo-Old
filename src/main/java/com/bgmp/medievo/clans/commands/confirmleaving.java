@@ -28,6 +28,7 @@ public class confirmleaving implements CommandExecutor {
                 if (command.getName().equalsIgnoreCase("confirm")) {
                     plugin.getConfig().set("Players." + uuid + ".clan", "neutral");
                     player.sendMessage(ChatColor.RED + "You have successfully left " + ChatColor.AQUA + clan + ChatColor.RED);
+                    plugin.getConfig().set("Players.Clans." + clan, "undefined");
                     plugin.saveConfig();
                 } else if (command.getName().equalsIgnoreCase("deny")) {
                     player.sendMessage(ChatColor.RED + "You have not left " + ChatColor.AQUA + clan);
