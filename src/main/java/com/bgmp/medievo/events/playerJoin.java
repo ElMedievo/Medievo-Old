@@ -55,7 +55,7 @@ public class playerJoin implements Listener {
                     player.setDisplayName(ChatColor.YELLOW + player.getName());
                     player.setPlayerListName(ChatColor.YELLOW + player.getName());
             }
-            event.setJoinMessage(ChatColor.GOLD + "» " + ChatColor.RESET + player.getDisplayName());
+            event.setJoinMessage(ChatColor.GOLD + "» " + ChatColor.RESET + player.getDisplayName() + ChatColor.GOLD + " has joined the game.");
         }
     }
 }
