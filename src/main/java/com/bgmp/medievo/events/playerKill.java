@@ -25,8 +25,8 @@ public class playerKill implements Listener {
         w.playSound(deadp.getLocation(), Sound.ENTITY_BLAZE_DEATH, 10, 1);
         Entity killer = event.getEntity().getKiller();
         if (killer != null) {
-            killer.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "+1 Kill " + ChatColor.DARK_PURPLE + "| " + ChatColor.GRAY + "killed " + ChatColor.YELLOW + deadp.getName());
-            event.setDeathMessage(ChatColor.YELLOW + deadp.getName() + ChatColor.GRAY + " was killed by " + ChatColor.YELLOW + killer.getName());
+            killer.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "+1 Kill " + ChatColor.DARK_PURPLE + "| " + ChatColor.GRAY + "killed " + ChatColor.YELLOW + deadp.getDisplayName());
+            event.setDeathMessage(ChatColor.YELLOW + deadp.getName() + ChatColor.GRAY + " was killed by " + ChatColor.YELLOW + ((Player) killer).getDisplayName());
         }
     }
 }

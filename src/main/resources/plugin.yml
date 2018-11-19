@@ -69,6 +69,12 @@ commands:
     usage: /adminchat
     description: Private chat for admins
     aliases: [a, ac]
+  sethome:
+    usage: /sethome
+    description: Set current location to be your respawn location.
+  me:
+    usage: /me
+    description: custom message
   permissions:
     medievo.reload:
       description: Allows you to reloadconfig the Medievo plugin
@@ -95,5 +101,8 @@ commands:
       description: Allows you to see the server reports
       default: op
     medievo.adminchat:
-      description: ALlows you to see adminchat
+      description: Allows you to see adminchat
+      default: op
+    medievo.sethome:
+      description: Allows you to place your home.
       default: op
