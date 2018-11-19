@@ -34,11 +34,11 @@ public class kick implements CommandExecutor {
                     if (sender instanceof Player) {
                         Player source = (Player) sender;
                         kickedon.kickPlayer(ChatColor.RED + "You have been kicked!" + "\n" + ChatColor.GOLD + "\n" + "» " + msg + "\n\n" + appeal + "\n" + appealsmail);
-                        Bukkit.broadcastMessage(source.getDisplayName() + ChatColor.GOLD + " » " + "Kicked" + " » " + ChatColor.RESET + kickedon.getName() + ChatColor.GOLD + " » " + msg);
+                        Bukkit.broadcastMessage(source.getDisplayName() + ChatColor.GOLD + " » " + "Kicked" + " » " + ChatColor.RESET + kickedon.getDisplayName() + ChatColor.GOLD + " » " + msg);
                     } else {
                         String console = ChatColor.GOLD + "❖" + ChatColor.DARK_AQUA + "Console";
                         kickedon.kickPlayer(ChatColor.RED + "You have been kicked!" + "\n" + ChatColor.GOLD + "\n" + "» " + msg + "\n\n" + appeal + "\n" + appealsmail);
-                        Bukkit.broadcastMessage(console + ChatColor.GOLD + " » " + "Kicked" + " » " + ChatColor.RESET + kickedon.getName() + ChatColor.GOLD + " » " + msg);
+                        Bukkit.broadcastMessage(console + ChatColor.GOLD + " » " + "Kicked" + " » " + ChatColor.RESET + kickedon.getDisplayName() + ChatColor.GOLD + " » " + msg);
                     }
                 } else {
                     if (sender instanceof Player) {

@@ -38,7 +38,7 @@ public class invite implements CommandExecutor {
                                 invitequeue.put(inviteduuid, clan);
                                 player.sendMessage(ChatColor.GREEN + "Invitation sent to " + ChatColor.RESET + invited.getDisplayName());
                                 invited.sendMessage(ChatColor.GREEN + "You have been invited to join " + ChatColor.AQUA + clan + ChatColor.GREEN + "!");
-                                invited.sendMessage("You may " + ChatColor.GREEN + "/accept " + ChatColor.RESET + "or " + ChatColor.RED + "/deny " + ChatColor.RESET + "this request");
+                                invited.sendMessage("You may " + ChatColor.GREEN + "/accept " + ChatColor.RESET + "or " + ChatColor.RED + "/cancel " + ChatColor.RESET + "this request");
                             } else {
                                 player.sendMessage(ChatColor.RED + "That player is being invited to another clan");
                             }
