@@ -25,6 +25,8 @@ public class message implements CommandExecutor {
             if (cmd.getName().equalsIgnoreCase("message")) {
                 Player msgsender = (Player) sender;
 
+                String uuidmsgsender = msgsender.getUniqueId().toString();
+
                 if (args.length > 1) {
 
                     for (Player receiver : Bukkit.getServer().getOnlinePlayers()) {
@@ -44,8 +46,10 @@ public class message implements CommandExecutor {
                             msgsender.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
                                     receiver.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
 
+                            String uuidreceiver = receiver.getUniqueId().toString();
+
                             // Map receiver to msgsender in the reply queue, so that receiver may send a message to msgsender in the future
-                            replyqueue.put(receiver, msgsender); // Map receiver to its msgsender
+                            replyqueue.put(uuidreceiver, uuidmsgsender); // Map receiver to its msgsender
                         } else {
                             msgsender.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to send a message to!");
                         }

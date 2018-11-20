@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 import static com.bgmp.medievo.util.genericmessages.noconsole;
 import static com.bgmp.medievo.util.queues.replyqueue;
+import static org.bukkit.Bukkit.getServer;
 
 public class reply implements CommandExecutor {
 
@@ -34,22 +35,29 @@ public class reply implements CommandExecutor {
                     }
                     String message = builder.toString();
 
-                    if (replyqueue.get(replyingPlayer) != null) { // if sender previously received a message from someone
-                        Player repliedTo = replyqueue.get(replyingPlayer);
-                        if(repliedTo.isOnline()) {
+                    String uuidReplyingPlayer = replyingPlayer.getUniqueId().toString();
 
-                            repliedTo.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
-                                    + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
-                                    replyingPlayer.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+                    if (replyqueue.get(uuidReplyingPlayer) != null) { // if sender previously received a message from someone
+                        String uuidRepliedTo = replyqueue.get(uuidReplyingPlayer);
+                        for(Player p : getServer().getOnlinePlayers()){
+                            if(p.getUniqueId().equals(replyqueue.get(uuidReplyingPlayer))) {
+                                Player repliedTo = p;
+                                if (repliedTo.isOnline()) {
 
-                            replyingPlayer.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
-                                    + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
-                                    repliedTo.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+                                    repliedTo.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
+                                            + "" + ChatColor.GRAY + "] From " + ChatColor.RESET +
+                                            replyingPlayer.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
 
-                            replyqueue.put(repliedTo, replyingPlayer);
-                            // Let the player who is replied to now be able to reply as well
-                        } else {
-                            replyingPlayer.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to reply to!");
+                                    replyingPlayer.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.AQUA + "PM" + ChatColor.RESET
+                                            + "" + ChatColor.GRAY + "] To " + ChatColor.RESET +
+                                            repliedTo.getDisplayName() + ChatColor.RESET + "" + ChatColor.GRAY + ": " + ChatColor.RESET + "" + ChatColor.WHITE + message);
+
+                                    replyqueue.put(uuidRepliedTo, uuidReplyingPlayer);
+                                    // Let the player who is replied to now be able to reply as well
+                                } else {
+                                    replyingPlayer.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to reply to!");
+                                }
+                            }
                         }
                     } else { // if player has not previously received a message from someone
                         replyingPlayer.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Nobody to reply to!");
