@@ -75,9 +75,9 @@ commands:
   home:
     usage: /home
     description: Teleport to your home
-    aliases: [tph]
+    aliases: [tphome, tph]
   heal:
-    usage: /heal [player]
+    usage: /heal
     description: Heals the player
   permissions:
     medievo.reload:
