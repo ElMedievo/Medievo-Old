@@ -67,13 +67,13 @@ commands:
     aliases: [r]
   adminchat:
     usage: /adminchat
-    description: Private chat for admins
+    description: Private chat for staff
     aliases: [a, ac]
   sethome:
     usage: /sethome
     description: Set current location to be your respawn location.
-  tphome:
-    usage: /tphome
+  home:
+    usage: /home
     description: Teleport to your home
     aliases: [tph]
   heal:
@@ -106,12 +106,6 @@ commands:
       default: op
     medievo.adminchat:
       description: Allows you to see adminchat
-      default: op
-    medievo.sethome:
-      description: Allows you to place your home
-      default: op
-    medievo.tphome:
-      description: Allows you to tp to your home
       default: op
     medievo.heal:
       description: Allows you to heal a player

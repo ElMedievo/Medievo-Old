@@ -27,11 +27,11 @@ public class create implements CommandExecutor {
             if (args.length == 1) {
                 String clan = args[0];
                 if (plugin.getConfig().getString("Players." + uuid + ".clan").equals("neutral")) {
-                    if (!plugin.getConfig().isConfigurationSection("Players.Clans" + clan) || plugin.getConfig().getString("Players.Clans" + clan).equals("undefined")) {
+                    if (!plugin.getConfig().isConfigurationSection("Players.Clans." + clan) || plugin.getConfig().getString("Players.Clans." + clan).equals("undefined")) {
                         plugin.getConfig().set("Players." + uuid + ".clan", clan);
                         player.sendMessage(ChatColor.GREEN + "You have successfully created " + ChatColor.AQUA + clan + ChatColor.GREEN + "!");
                         Bukkit.broadcastMessage(ChatColor.YELLOW + "The clan " + ChatColor.AQUA + clan + ChatColor.YELLOW + " has been founded by " + player.getDisplayName());
-                        plugin.getConfig().set("Players.Clans" + clan, "defined");
+                        plugin.getConfig().set("Players.Clans." + clan, "defined");
                         plugin.saveConfig();
                     } else {
                         sender.sendMessage(ChatColor.AQUA + clan + ChatColor.RED + " already exists!");

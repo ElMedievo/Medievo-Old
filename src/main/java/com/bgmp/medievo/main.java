@@ -8,7 +8,7 @@ import com.bgmp.medievo.commands.chat.adminchat;
 import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.chat.reply;
 import com.bgmp.medievo.commands.admin.mod;
-import com.bgmp.medievo.commands.home.tphome;
+import com.bgmp.medievo.commands.home.home;
 import com.bgmp.medievo.commands.punishments.ban;
 import com.bgmp.medievo.commands.punishments.kick;
 import com.bgmp.medievo.commands.punishments.pardon;
@@ -55,7 +55,7 @@ public final class main extends JavaPlugin {
         getCommand("adminchat").setExecutor(new adminchat(this));
         getCommand("reply").setExecutor(new reply(this));
         getCommand("sethome").setExecutor(new sethome(this));
-        getCommand("tphome").setExecutor((new tphome(this)));
+        getCommand("home").setExecutor((new home(this)));
         getCommand("heal").setExecutor(new heal(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
