@@ -7,7 +7,6 @@ import com.bgmp.medievo.commands.admin.broadcast;
 import com.bgmp.medievo.commands.admin.heal;
 import com.bgmp.medievo.commands.chat.adminchat;
 import com.bgmp.medievo.commands.chat.message;
-import com.bgmp.medievo.commands.chat.reply;
 import com.bgmp.medievo.commands.admin.mod;
 import com.bgmp.medievo.commands.home.home;
 import com.bgmp.medievo.commands.punishments.ban;
@@ -54,7 +53,7 @@ public final class main extends JavaPlugin {
         getCommand("report").setExecutor(new reports(this));
         getCommand("message").setExecutor(new message(this));
         getCommand("adminchat").setExecutor(new adminchat(this));
-        getCommand("reply").setExecutor(new reply(this));
+       // getCommand("reply").setExecutor(new reply(this));
         getCommand("sethome").setExecutor(new sethome(this));
         getCommand("home").setExecutor((new home(this)));
         getCommand("heal").setExecutor(new heal(this));
