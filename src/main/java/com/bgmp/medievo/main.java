@@ -9,6 +9,7 @@ import com.bgmp.medievo.commands.chat.adminchat;
 import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.admin.mod;
 import com.bgmp.medievo.commands.home.home;
+import com.bgmp.medievo.commands.other.ping;
 import com.bgmp.medievo.commands.punishments.ban;
 import com.bgmp.medievo.commands.punishments.kick;
 import com.bgmp.medievo.commands.punishments.pardon;
@@ -60,6 +61,7 @@ public final class main extends JavaPlugin {
         getCommand("tpa").setExecutor(new tpa(this));
         getCommand("tpaccept").setExecutor(new tpaccept(this));
         getCommand("tpcancel").setExecutor(new tpcancel(this));
+        getCommand("ping").setExecutor((new ping(this)));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);

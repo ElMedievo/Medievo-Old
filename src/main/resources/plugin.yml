@@ -88,6 +88,9 @@ commands:
   tpcancel:
     usage: /tpcancel
     description: Cancels an incoming teleport request
+  ping:
+    usage: /ping
+    description: pong!
   permissions:
     medievo.reload:
       description: Allows you to reloadconfig the Medievo plugin
