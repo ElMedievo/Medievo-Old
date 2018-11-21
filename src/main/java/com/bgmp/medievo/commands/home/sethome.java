@@ -3,13 +3,11 @@ package com.bgmp.medievo.commands.home;
 import com.bgmp.medievo.main;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import static com.bgmp.medievo.util.genericmessages.noperms;
 import static com.bgmp.medievo.util.genericmessages.noconsole;
 
 public class sethome implements CommandExecutor {
@@ -36,6 +34,7 @@ public class sethome implements CommandExecutor {
                     plugin.getConfig().set("Players." + uuid + ".home.x", x);
                     plugin.getConfig().set("Players." + uuid + ".home.y", y);
                     plugin.getConfig().set("Players." + uuid + ".home.z", z);
+                    plugin.saveConfig();
                     player.setBedSpawnLocation(player.getLocation(), true);
                     player.sendMessage(ChatColor.GREEN + "Your home has been set!");
                 } else {
