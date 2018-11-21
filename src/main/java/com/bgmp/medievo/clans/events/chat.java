@@ -8,6 +8,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import static com.bgmp.medievo.commands.chat.adminchat.toggleadminchat;
+
 public class chat implements Listener {
 
     private final main plugin;
@@ -23,11 +25,22 @@ public class chat implements Listener {
         String uuid = player.getUniqueId().toString();
         String msg = event.getMessage();
 
-        if (plugin.getConfig().getString("Players." + uuid + ".clan").equals("neutral")) {
-            Bukkit.broadcastMessage("[" + ChatColor.GRAY + "Neutral" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
+        if(!toggleadminchat.contains(uuid)) {
+
+            if (plugin.getConfig().getString("Players." + uuid + ".clan").equals("neutral")) {
+                Bukkit.broadcastMessage("[" + ChatColor.GRAY + "Neutral" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
+            } else {
+                String clan = plugin.getConfig().getString("Players." + uuid + ".clan");
+                Bukkit.broadcastMessage("[" + ChatColor.AQUA + clan + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
+            }
+
         } else {
-            String clan = plugin.getConfig().getString("Players." + uuid + ".clan");
-            Bukkit.broadcastMessage("[" + ChatColor.AQUA + clan + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
+            for(Player on : Bukkit.getServer().getOnlinePlayers()) {
+                if(on.hasPermission("medievo.adminchat")) {
+                    on.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.GOLD + "A" + ChatColor.RESET + "" + ChatColor.GRAY
+                            + "] " + ChatColor.RESET + player.getDisplayName() + ": " + ChatColor.WHITE + msg);
+                }
+            }
         }
     }
 }
