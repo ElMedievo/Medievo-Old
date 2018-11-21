@@ -16,6 +16,9 @@ import com.bgmp.medievo.commands.punishments.pardon;
 import com.bgmp.medievo.commands.punishments.reports;
 import com.bgmp.medievo.commands.randomtp.randomtp;
 import com.bgmp.medievo.commands.home.sethome;
+import com.bgmp.medievo.commands.tpa.tpa;
+import com.bgmp.medievo.commands.tpa.tpaccept;
+import com.bgmp.medievo.commands.tpa.tpcancel;
 import com.bgmp.medievo.events.playerJoin;
 import com.bgmp.medievo.commands.admin.gamemode;
 import com.bgmp.medievo.events.playerKill;
@@ -58,6 +61,9 @@ public final class main extends JavaPlugin {
         getCommand("sethome").setExecutor(new sethome(this));
         getCommand("home").setExecutor((new home(this)));
         getCommand("heal").setExecutor(new heal(this));
+        getCommand("tpa").setExecutor(new tpa(this));
+        getCommand("tpaccept").setExecutor(new tpaccept(this));
+        getCommand("tpcancel").setExecutor(new tpcancel(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);

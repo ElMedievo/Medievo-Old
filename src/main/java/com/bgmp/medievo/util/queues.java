@@ -9,10 +9,13 @@ public class queues {
     public static HashMap<String, String> invitequeue;
     public static HashMap<String, Boolean> confirmqueue;
     public static HashMap<String, String> replyqueue;
+    public static HashMap<String, Player> tpaqueue;
+
 
     public static void loadqueues() {
          invitequeue = new HashMap<>();
          confirmqueue = new HashMap<>();
          replyqueue = new HashMap<>();
+         tpaqueue = new HashMap<>();
     }
 }

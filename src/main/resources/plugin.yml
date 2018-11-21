@@ -79,6 +79,15 @@ commands:
   heal:
     usage: /heal
     description: Heals the player
+  tpa:
+    usage: /tpa
+    description: Sends a telport request
+  tpaccept:
+    usage: /tpaccept
+    description: Accepts an incoming teleport request
+  tpcancel:
+    usage: /tpcancel
+    description: Cancels an incoming teleport request
   permissions:
     medievo.reload:
       description: Allows you to reloadconfig the Medievo plugin
