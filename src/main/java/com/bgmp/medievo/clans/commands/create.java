@@ -37,7 +37,7 @@ public class create implements CommandExecutor {
                         sender.sendMessage(ChatColor.AQUA + clan + ChatColor.RED + " already exists!");
                     }
                 } else {
-                    player.sendMessage(ChatColor.RED + "You are already a member of the" + ChatColor.AQUA + plugin.getConfig().getString("Players." + uuid + ".clan") + ChatColor.RED +  " clan!");
+                    player.sendMessage(ChatColor.RED + "You are already a member of the " + ChatColor.AQUA + plugin.getConfig().getString("Players." + uuid + ".clan") + ChatColor.RED +  " clan!");
                     player.sendMessage(ChatColor.RED + "You may leave your actual clan by using the command: " + ChatColor.AQUA + "/leave");
                 }
             } else {

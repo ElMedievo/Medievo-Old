@@ -2,6 +2,7 @@ package com.bgmp.medievo;
 
 import com.bgmp.medievo.clans.commands.*;
 import com.bgmp.medievo.clans.events.chat;
+import com.bgmp.medievo.clans.events.playerHit;
 import com.bgmp.medievo.commands.admin.broadcast;
 import com.bgmp.medievo.commands.admin.heal;
 import com.bgmp.medievo.commands.chat.adminchat;
@@ -63,6 +64,7 @@ public final class main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new chat(this), this);
         Bukkit.getPluginManager().registerEvents(new playerJoin(this), this);
         Bukkit.getPluginManager().registerEvents(new playerKill(this), this);
+        Bukkit.getPluginManager().registerEvents(new playerHit(this), this);
     }
 
     @Override
