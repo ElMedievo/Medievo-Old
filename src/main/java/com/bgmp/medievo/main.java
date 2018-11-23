@@ -10,10 +10,7 @@ import com.bgmp.medievo.commands.chat.message;
 import com.bgmp.medievo.commands.admin.mod;
 import com.bgmp.medievo.commands.home.home;
 import com.bgmp.medievo.commands.other.ping;
-import com.bgmp.medievo.commands.punishments.ban;
-import com.bgmp.medievo.commands.punishments.kick;
-import com.bgmp.medievo.commands.punishments.pardon;
-import com.bgmp.medievo.commands.punishments.reports;
+import com.bgmp.medievo.commands.punishments.*;
 import com.bgmp.medievo.commands.randomtp.randomtp;
 import com.bgmp.medievo.commands.home.sethome;
 import com.bgmp.medievo.commands.tpa.tpa;
@@ -61,7 +58,8 @@ public final class main extends JavaPlugin {
         getCommand("tpa").setExecutor(new tpa(this));
         getCommand("tpaccept").setExecutor(new tpaccept(this));
         getCommand("tpcancel").setExecutor(new tpcancel(this));
-        getCommand("ping").setExecutor((new ping(this)));
+        getCommand("ping").setExecutor(new ping(this));
+        getCommand("clanchat").setExecutor(new clanchat(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);
@@ -70,6 +68,10 @@ public final class main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new playerKill(this), this);
         Bukkit.getPluginManager().registerEvents(new playerHit(this), this);
     }
+
+
+
+
 
     @Override
     public void onDisable() {

@@ -38,7 +38,7 @@ public class chat implements Listener {
             for(Player on : Bukkit.getServer().getOnlinePlayers()) {
                 if(on.hasPermission("medievo.adminchat")) {
                     on.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.GOLD + "A" + ChatColor.RESET + "" + ChatColor.GRAY
-                            + "] " + ChatColor.RESET + player.getDisplayName() + ": " + ChatColor.WHITE + msg);
+                            + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.WHITE + ": " + ChatColor.RESET + msg);
                 }
             }
         }

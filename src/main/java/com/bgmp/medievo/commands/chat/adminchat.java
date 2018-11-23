@@ -43,7 +43,7 @@ public class adminchat implements CommandExecutor {
                         for (Player on : Bukkit.getServer().getOnlinePlayers()) {
                             if (on.hasPermission("medievo.adminchat")) {
                                 on.sendMessage(ChatColor.GRAY + "[" + ChatColor.RESET + "" + ChatColor.GOLD + "A" + ChatColor.RESET + "" + ChatColor.GRAY
-                                + "] " + ChatColor.RESET + msgsender.getDisplayName() + ": " + ChatColor.WHITE + message);
+                                + "] " + ChatColor.RESET + msgsender.getDisplayName() + ChatColor.WHITE + ": " + ChatColor.RESET + message);
                             }
                         }
                     } else if (args.length == 0) {

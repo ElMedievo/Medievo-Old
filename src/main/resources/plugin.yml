@@ -91,6 +91,10 @@ commands:
   ping:
     usage: /ping
     description: pong!
+  clanchat:
+    usage: /clanchat
+    description: Send a message to the players in your clan!
+    aliases: [c, cc, t]
   permissions:
     medievo.reload:
       description: Allows you to reloadconfig the Medievo plugin
