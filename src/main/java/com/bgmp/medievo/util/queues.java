@@ -10,7 +10,7 @@ public class queues {
 
     public static HashMap<String, String> invitequeue;
     public static HashMap<String, Boolean> confirmqueue;
-   // public static BiMap<String, String> replyqueue;
+    //public static BiMap<String, String> replyqueue;
     public static HashMap<String, Player> tpaqueue;
 
 
