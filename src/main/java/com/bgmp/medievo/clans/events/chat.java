@@ -26,6 +26,7 @@ public class chat implements Listener {
         String uuid = player.getUniqueId().toString();
         String msg = event.getMessage();
 
+        if(event.getMessage().startsWith(ChatColor.GRAY + "[[")) { event.setCancelled(true); }
 
         if(!toggleadminchat.contains(uuid)) {
 
