@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static com.bgmp.medievo.util.genericmessages.noconsole;
-//import static com.bgmp.medievo.util.queues.replyqueue;
+import static com.bgmp.medievo.util.queues.replyqueue;
 
 public class message implements CommandExecutor {
 
@@ -52,7 +52,7 @@ public class message implements CommandExecutor {
                                 String uuidreceiver = receiver.getUniqueId().toString();
 
                                 // Map receiver to msgsender in the reply queue, so that receiver may send a message to msgsender in the future
-                                //replyqueue.put(uuidreceiver, uuidmsgsender); // Map receiver to its msgsender
+                                replyqueue.put(uuidreceiver, uuidmsgsender); // Map receiver to its msgsender
                         }
                     }
 
