@@ -38,12 +38,12 @@ public class clanchat implements CommandExecutor {
 
                 if (!playerclan.equalsIgnoreCase("neutral")) { // if player is in a clan
 
-                    for(Player on : Bukkit.getServer().getOnlinePlayers()){
+                    for (Player on : Bukkit.getServer().getOnlinePlayers()){
 
                         String onuuid = on.getUniqueId().toString();
                         String onclan = plugin.getConfig().getString("Players." + onuuid + ".clan");
 
-                        if(onclan.equals(playerclan) && !uuid.equals(onuuid)) {
+                        if (onclan.equals(playerclan) && !uuid.equals(onuuid)) {
                             on.sendMessage(ChatColor.GRAY + "[" + ChatColor.GREEN + "CLAN" + ChatColor.GRAY + "] " + ChatColor.RESET + player.getDisplayName()
                                     + ChatColor.WHITE + ": " + ChatColor.RESET + message);
                         }
