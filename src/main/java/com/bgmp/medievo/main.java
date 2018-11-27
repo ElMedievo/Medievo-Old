@@ -34,8 +34,7 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         loadConfig();
         loadqueues();
-
-        getCommand("randomtp").setExecutor(new randomtp(this));
+        /* Clans */
         getCommand("create").setExecutor(new create(this));
         getCommand("leave").setExecutor(new leave(this));
         getCommand("confirm").setExecutor(new confirmleaving(this));
@@ -43,26 +42,31 @@ public final class main extends JavaPlugin {
         getCommand("invite").setExecutor(new invite(this));
         getCommand("accept").setExecutor(new accept(this));
         getCommand("cancel").setExecutor(new cancel(this));
-        getCommand("reloadconfig").setExecutor(new reloadConfig(this));
-        getCommand("gamemode").setExecutor(new gamemode(this));
-        getCommand("broadcast").setExecutor(new broadcast(this));
+        getCommand("clanchat").setExecutor(new clanchat(this));
+        /* Moderation */
         getCommand("mod").setExecutor(new mod(this));
         getCommand("ban").setExecutor(new ban(this));
         getCommand("kick").setExecutor(new kick(this));
         getCommand("pardon").setExecutor(new pardon(this));
-        getCommand("report").setExecutor(new reports(this));
-        getCommand("message").setExecutor(new message(this));
         getCommand("adminchat").setExecutor(new adminchat(this));
-        getCommand("reply").setExecutor(new reply(this));
-        getCommand("sethome").setExecutor(new sethome(this));
-        getCommand("home").setExecutor((new home(this)));
-        getCommand("heal").setExecutor(new heal(this));
+        getCommand("general").setExecutor(new general(this));
+        getCommand("broadcast").setExecutor(new broadcast(this));
+        getCommand("gamemode").setExecutor(new gamemode(this));
+        /* General commands */
         getCommand("tpa").setExecutor(new tpa(this));
         getCommand("tpaccept").setExecutor(new tpaccept(this));
         getCommand("tpcancel").setExecutor(new tpcancel(this));
+        getCommand("randomtp").setExecutor(new randomtp(this));
+        getCommand("sethome").setExecutor(new sethome(this));
+        getCommand("home").setExecutor((new home(this)));
+        getCommand("report").setExecutor(new reports(this));
+        getCommand("message").setExecutor(new message(this));
+        getCommand("reply").setExecutor(new reply(this));
+        /* Admin Commands */
+        getCommand("reloadconfig").setExecutor(new reloadConfig(this));
+        getCommand("heal").setExecutor(new heal(this));
+        /* Other */
         getCommand("ping").setExecutor(new ping(this));
-        getCommand("clanchat").setExecutor(new clanchat(this));
-        getCommand("general").setExecutor(new general(this));
 
         Bukkit.getPluginManager().registerEvents(new playerLeave(this), this);
         Bukkit.getPluginManager().registerEvents(new playerRespawn(this), this);
@@ -81,4 +85,5 @@ public final class main extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         saveConfig();
     }
+
 }

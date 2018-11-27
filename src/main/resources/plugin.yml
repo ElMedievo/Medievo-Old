@@ -4,129 +4,129 @@ main: com.bgmp.medievo.main
 authors: [BGMM]
 description: Medieval plugin
 commands:
-  randomtp:
-    usage: /randomtp
-    aliases: [rtp]
-    description: Random teleport command
-  create:
-    usage: /create
-    description: Creates a clan
-  leave:
-    usage: /leave
-    description: Leaves you current clan
-  invite:
-    usage: /invite
-    description: Invites someone to your actual clan
-  accept:
-    usage: /accept
-    description: Accepts a clan invitiation
-  cancel:
-    usage: /cancel
-    description: Cancels a clan invitation
-  confirm:
-    usage: /confirm
-    description: Confirms an action
-  deny:
-    usage: /deny
-    description: Denies can action
-  reloadconfig:
-    usage: /reloadconfig
-    aliases: [rlconfig]
-    description: Reloads the server config
-  gamemode:
-    usage: /gamemode
-    description: Changes your gamemode
-    aliases: [gm]
   broadcast:
     usage: /broadcast
-    description: Broadcast to the server
+    description: Broadcast to the server.
     aliases: [br]
+  gamemode:
+    usage: /gamemode
+    description: Changes your gamemode.
+    aliases: [gm]
   mod:
     usage: /mod
-    description: Turns your mode into moderator mode
+    description: Turns your mode into moderator mode.
+  adminchat:
+    usage: /adminchat
+    description: Private chat for staff.
+    aliases: [a, ac]
+  general:
+    usage: /general
+    description: Send a message to the server.
+    aliases: [g]
   ban:
     usage: /ban
-    description: Bans a player
+    description: Bans a player.
     aliases: [pb]
   kick:
     usage: /kick
-    description: Kicks a player
+    description: Kicks a player.
   pardon:
     usage: /pardon
-    description: Pardons a player
+    description: Pardons a player.
+  create:
+    usage: /create
+    description: Creates a clan.
+  leave:
+    usage: /leave
+    description: Leaves you current clan.
+  invite:
+    usage: /invite
+    description: Invites someone to your actual clan.
+  accept:
+    usage: /accept
+    description: Accepts a clan invitiation.
+  cancel:
+    usage: /cancel
+    description: Cancels a clan invitation.
+  confirm:
+    usage: /confirm
+    description: Confirms an action.
+  deny:
+    usage: /deny
+    description: Denies an action.
+  clanchat:
+    usage: /clanchat
+    description: Send a message to the players in your clan.
+    aliases: [c, cc, t]
+  randomtp:
+    usage: /randomtp
+    aliases: [rtp]
+    description: Random teleport command.
+  tpa:
+    usage: /tpa
+    description: Sends a teleport request.
+  tpaccept:
+    usage: /tpaccept
+    description: Accepts an incoming teleport request.
+  tpcancel:
+    usage: /tpcancel
+    description: Cancels an incoming teleport request.
   report:
     usage: /report
-    description: Reports a player
+    description: Reports a player.
   message:
     usage: /message
-    description: Private Message a player
+    description: Private Message a player.
     aliases: [msg, pm, tell]
   reply:
     usage: /reply
-    description: Reply to a player
+    description: Reply to a player.
     aliases: [r]
-  general:
-    usage: /general
-    description: Send a message to the server
-    aliases: g
-  adminchat:
-    usage: /adminchat
-    description: Private chat for staff
-    aliases: [a, ac]
   sethome:
     usage: /sethome
     description: Set current location to be your respawn location.
   home:
     usage: /home
-    description: Teleport to your home
+    description: Teleport to your home.
     aliases: [tphome, tph]
   heal:
     usage: /heal
-    description: Heals the player
-  tpa:
-    usage: /tpa
-    description: Sends a teleport request
-  tpaccept:
-    usage: /tpaccept
-    description: Accepts an incoming teleport request
-  tpcancel:
-    usage: /tpcancel
-    description: Cancels an incoming teleport request
+    description: Heals the player.
   ping:
     usage: /ping
     description: pong!
-  clanchat:
-    usage: /clanchat
-    description: Send a message to the players in your clan!
-    aliases: [c, cc, t]
+  reloadconfig:
+    usage: /reloadconfig
+    aliases: [rlconfig]
+    description: Reloads the server config.
   permissions:
     medievo.reload:
-      description: Allows you to reloadconfig the Medievo plugin
+      description: Allows you to reloadconfig the Medievo plugin.
       default: op
     medievo.broadcast:
-      description: Allows you to send a broadcast message
+      description: Allows you to send a broadcast message.
       default: op
     medievo.gamemode:
-      description: Allows you to change your gamemode
+      description: Allows you to change your gamemode.
       default: op
     medievo.mod:
-      descritpion: Allows you to get into mod mode
+      descritpion: Allows you to get into mod mode.
       default: op
     medievo.ban:
-      description: Allows you to ban a player
+      description: Allows you to ban a player.
       default: op
     medievo.kick:
-      description: Allows you to kick player
+      description: Allows you to kick player.
       default: op
     medievo.pardon:
-      description: Allows you to pardon a player
+      description: Allows you to pardon a player.
       default: op
     medievo.reports:
-      description: Allows you to see the server reports
+      description: Allows you to see the server reports.
       default: op
     medievo.adminchat:
-      description: Allows you to see adminchat
+      description: Allows you to see adminchat.
       default: op
     medievo.heal:
-      description: Allows you to heal a player
+      description: Allows you to heal a player.
       default: op
