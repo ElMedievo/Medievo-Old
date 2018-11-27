@@ -1,4 +1,4 @@
-package com.bgmp.medievo.events;
+package com.bgmp.medievo.events.players;
 
 import com.bgmp.medievo.main;
 import org.bukkit.ChatColor;
