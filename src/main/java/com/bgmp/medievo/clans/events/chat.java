@@ -10,6 +10,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 import static com.bgmp.medievo.commands.chat.adminchat.toggleadminchat;
 import static com.bgmp.medievo.clans.commands.clanchat.toggleclanchat;
+import static com.bgmp.medievo.commands.punishments.mute.mutelist;
 
 public class chat implements Listener {
 
@@ -25,6 +26,14 @@ public class chat implements Listener {
         Player player = event.getPlayer();
         String uuid = player.getUniqueId().toString();
         String msg = event.getMessage();
+        String clan = plugin.getConfig().getString("Players." + uuid + ".clan");
+
+        if (mutelist.get(uuid)) {
+            event.setCancelled(true);
+            player.sendMessage(ChatColor.YELLOW + "⚠ " + ChatColor.RED + "Your message was not sent! You are muted!");
+            player.sendMessage(ChatColor.GOLD + "✖" + ChatColor.RESET + "[" + ChatColor.AQUA + clan + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
+            return;
+        }
 
         if(event.getMessage().startsWith(ChatColor.GRAY + "[[")) { event.setCancelled(true); }
 
@@ -36,7 +45,6 @@ public class chat implements Listener {
                 if (plugin.getConfig().getString("Players." + uuid + ".clan").equals("neutral")) {
                     Bukkit.broadcastMessage("[" + ChatColor.GRAY + "Neutral" + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
                 } else {
-                    String clan = plugin.getConfig().getString("Players." + uuid + ".clan");
                     Bukkit.broadcastMessage("[" + ChatColor.AQUA + clan + ChatColor.RESET + "] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RESET + ": " + msg);
                 }
 

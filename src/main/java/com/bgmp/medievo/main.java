@@ -50,6 +50,7 @@ public final class main extends JavaPlugin {
         getCommand("mod").setExecutor(new mod(this));
         getCommand("ban").setExecutor(new ban(this));
         getCommand("kick").setExecutor(new kick(this));
+        getCommand("mute").setExecutor(new mute(this));
         getCommand("pardon").setExecutor(new pardon(this));
         getCommand("adminchat").setExecutor(new adminchat(this));
         getCommand("general").setExecutor(new general(this));

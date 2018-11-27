@@ -30,6 +30,9 @@ commands:
   kick:
     usage: /kick
     description: Kicks a player.
+  mute:
+    usage: /mute
+    description: Mutes a player.
   pardon:
     usage: /pardon
     description: Pardons a player.
