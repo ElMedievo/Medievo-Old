@@ -72,10 +72,6 @@ public final class main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new playerHit(this), this);
     }
 
-
-
-
-
     @Override
     public void onDisable() {
 
