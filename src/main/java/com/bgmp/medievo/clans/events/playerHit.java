@@ -1,6 +1,7 @@
 package com.bgmp.medievo.clans.events;
 
 import com.bgmp.medievo.main;
+import org.bukkit.block.data.type.Snow;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -60,6 +61,12 @@ public class playerHit implements Listener {
                     if (sp.getShooter() instanceof Player) {
                         damager = (Player) sp.getShooter();
                         damageruuid = damager.getUniqueId().toString();
+                    }
+                case SNOWBALL:
+                    Snowball snow = (Snowball) event.getDamager();
+                    if (snow.getShooter() instanceof Player) {
+                        damager = (Player) snow.getShooter();
+                        damageduuid = damager.getUniqueId().toString();
                     }
             }
             String clan1 = plugin.getConfig().getString("Players." + damageduuid + ".clan");
