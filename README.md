@@ -1,6 +1,7 @@
 # Medievo
 
 Un pequeño plugin para el server del medievo owo.
+La producción de ahora en adelante estará afiliada a http://bgmbox.com/
 
 *As of October the 23rd, commits will be listed in Spanish*
 
