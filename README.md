@@ -1,7 +1,7 @@
 # Medievo
 
 Un pequeño plugin para el server del medievo owo.
-La producción de ahora en adelante estará afiliada a http://bgmbox.com/
+La producción de ahora en adelante estará afiliada a https://elmedievo.org/
 
 As of February the 25th, this repository has been archived.
 
